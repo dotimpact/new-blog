@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スケジュール指向webメモツール：Calki　ver.002</title>
+</head>
+<body class="" >
+<div class="container">
+    <header>
+        <ul class="nav">
+            <li>
+                <a href="/">home<small>where the heart is</small></a>
+            </li>
+            <li>
+                <a href="/about">about<small>all about this</small></a>
+            </li>
+        </ul>
+        <h1>スケジュール指向webメモツール：Calki　ver.002</h1>
+    </header>
+    <img class="img_R" src='/hexo/images/wp-content/uploads/2008/02/calki002.png' alt='calki002.png' />
+<p>■夏の自由研究がわりに<a href="http://collisions.dotimpac.to/works/web/calki.html">calki</a>に手を入れてバージョンを上げてみました。Ajax系支援機能の追加でおもにデザインとユーザビリティがリファインされています。</p>
+<p><a href="http://prototype.conio.net/">prototype.js</a>を使ってこりこりと地味に非同期ロード系の機能を盛り込んでみたら、なんとなく便利っぽくなってきましたがどうでしょうか。とりあえずサンプル（というか自分で使ってる）サイトをごらんくださいませ。</p>
+<ul>
+<li><a href="http://calki.dotimpac.to/">http://calki.dotimpac.to/</a>　サンプルサイト</li>
+</ul>
+<h1>Calkiとは</h1>
+<p>■日付管理、簡易スケジュール機能のあるWiki風のメモツールです。<a href="http://ninjinix.x0.com/rn/">RandomNote</a>がベースになっています。詳しくは以下のページをごらんください。</p>
+<ul>
+<li><a href="http://collisions.dotimpac.to/works/web/calki.html">スケジュール指向Wiki風メモツール：Calki</a>
+<ul>
+<li>前バージョンの記事</li>
+</ul>
+</li>
+<li><a href="http://calki.dotimpac.to/?AboutPage.txt">Calkiとは</a>
+<ul>
+<li>CalkiのAboutPage</li>
+</ul>
+</li>
+</ul>
+<h1>新機能</h1>
+<p>■最近になって<a href="http://book.mycom.co.jp/wd/">WebDesigning</a>の今月号を立ち読みしてたら、JavaScript/Ajaxの特集に<a href="http://collisions.dotimpac.to/works/web/kaiwarecotonoha.html">kaiwarecotonoha</a>が紹介されてて驚いて、それでAjaxの検索が多かったのかー、あれすごい適当だしメンテもしてないしその後Ajaxもとくに触ってないから恐縮だなー、などと思いまして、じゃあprototype.jsでもちょっと触ってみるかと思ったんですな。せっかくだからとcalkiにいろいろ機能をつけていったら、インターフェイスの部分がかなり刷新されてしまいました。おおむね使いやすくなってると思います。</p>
+<h2>JavaScriptによる動的なページ操作</h2>
+<ul>
+<li>日付ページへのマウスオーバーでその日付ページに対するツールバーが出ます。直感的な操作が可能です。</li>
+<li>見出しをクリックすることで、メモを畳んで隠すことができます。</li>
+<li>開いている日付から「前の日」「次の週」のように順番に日付ページを開くことができます。</li>
+</ul>
+<p>JavaScriptでの動的なスタイル操作で、見たくない情報は隠せてちょっと気持ちがいいです。まだ開いてないメモを開いたり、日付を進めたり戻したりするときは、Ajax式の非同期ロードをします。</p>
+<h2>非同期ロード／セーブによるシームレス編集</h2>
+<ul>
+<li>以前までは画面が切り替わっていたメモの編集がその場でできるようになりました。</li>
+<li>追記の書き込みもその場で非同期に行います。</li>
+<li>編集時にほかのメモが参照できるので、コピー＆ペーストが簡単です。</li>
+</ul>
+<p><a href="http://www.tiddlywiki.com/">TiddlyWiki</a>のサクサク感を目指してみました。やや重いので待ち時間なしとはいきませんが。使ってみて編集時にほかのメモが見られる（そのメモも編集状態にしてwikiフォーマットでコピペできる）ってのがわりと重要だなと思ったんですが、それは後で書きます。</p>
+<h2><a href="http://1470.net/mm/">MM/memo</a>インポート機能</h2>
+<ul>
+<li><a href="http://1470.net/mm/">MM/memo</a>から自分のブックマークを日付ごとに取得してメモを作れます。</li>
+<li>ちゃんとタグをキーワードリンクにするので、うれしいかも</li>
+</ul>
+<p>おまけというか、自分が欲しかったのでつけました。ほんとは毎日自動取得したほうがいいかもしれないけど。</p>
+<h1>ダウンロード</h1>
+<p>■Ruby1.8.1の環境が必須です。また、非同期編集とMM/memoインポートは、別途Uconvをインストールしないと使えなくなっちゃったんで、デフォルトでは無効になっています。そのあたりご了承のうえ設置・使用してください。もちろん無保証です。</p>
+<ul>
+<li><a href="http://calki.dotimpac.to/release/calki002_20050829.zip">http://calki.dotimpac.to/release/calki002_20050829.zip</a></li>
+</ul>
+<p>設置方法はAboutPageをごらんください。</p>
+<ul>
+<li><a href="http://calki.dotimpac.to/?AboutPage.txt">http://calki.dotimpac.to/?AboutPage.txt</a></li>
+</ul>
+<h1>雑談：シームレス編集とwikiページの再統合</h1>
+<p>■上にもちょっと書きましたが自分でちょっと使ってみて、シームレス編集（というかJavaScriptでエレメントを差し替えてその場で編集できる機能）とwikiはかなり相性がいいんじゃないかと思いましたね（TiddlyWikiはもともとそれを狙っているのかもしれませんが）。とくに、編集しながらほかのページを見たり、そのページから（しかもWiki書式で）コピーしたりできるのがwiki的にうれしい。wikiエンジンによるアジャイルなコンテンツ作りには、方針の変更とか内容の再統合というプロセスが絶対に避けられないわけで、長くなりすぎたページの株分けとか、よく参照する内容を集めた新しいページの作成みたいなことが極力やりやすくないといけないのではと思いました。</p>
+<p>CalkiにはRandomNoteから継承した検索キーワードリンク機能があって、この検索結果の一番上に「このキーワードの新しいメモを作る」というフォームを前バージョンからつけてたんですが、使ってるうちにあんまり便利じゃないんではずしたりしてたんですな。ところが、これが今バージョンからはかなり威力を発揮します。たとえば「JavaScript」を検索すると、いままでメモしたJavaScriptのメモが一覧されますが、この中にはよく見るメモもあればぜんぜん見ないメモもあるわけです。そこでよく見るメモをそれぞれ編集状態にしてコピーして、新しいフォームに入れて別のキーワードをつけてメモを作成すれば、いままでより情報が簡単に引き出せるようになるというわけ。これかなり便利じゃないすか？　便利だと思うんですが、どうでしょう。</p>
+<p>というわけで、もし興味があったら使ってみてください。たぶんバグはたくさんあると思いますが。バグがあったらサンプルサイトに［［バグ］］とか検索キーワードをつけてメモを作っておいていただけるとたすかります。</p>
+
+    <footer>
+    <p>
+        The code is maintained by <a href="https://twitter.com/philhawksworth">Phil Hawksworth</a> for his own reference and as a quick start for some of his projetcs, but take it if it is useful to you too. Find the repo on <a href="">Github</a>.
+    </p>
+    <p>
+        This page was generated on Invalid DateTime
+    </p>
+</footer>
+
+</div>
+</body>
+</html>
+
+
+

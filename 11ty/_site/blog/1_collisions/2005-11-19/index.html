@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piccy ver.001</title>
+</head>
+<body class="" >
+<div class="container">
+    <header>
+        <ul class="nav">
+            <li>
+                <a href="/">home<small>where the heart is</small></a>
+            </li>
+            <li>
+                <a href="/about">about<small>all about this</small></a>
+            </li>
+        </ul>
+        <h1>Piccy ver.001</h1>
+    </header>
+    <img class="img_R" src='/hexo/images/wp-content/uploads/2008/02/piccy001.png' alt='piccy001.png' />
+<p>■先日公開した<a href="http://collisions.dotimpac.to/works.web/piccy.html">Piccy</a>を、問題の修正や新機能を追加してバージョン001として公開します。</p>
+<p>バージョン001では動作の不具合の修正と以下の機能を追加しました。</p>
+<ul>
+<li>管理者認証機能</li>
+<li>写真、フォルダ、タグへのコメント</li>
+<li>GPS携帯からの位置情報通知、ロケーションタグ機能</li>
+<li>GoogleMapsによるロケーションタグ一覧</li>
+</ul>
+<p>サンプルサイトをごらんください。サンプルサイトはパスワード「guest」で管理者ログインできます。</p>
+<ul>
+<li><a href="http://piccy.dotimpac.to/">http://piccy.dotimpac.to/</a></li>
+</ul>
+<p>■ロケーションタグとGoogleMapsAPIもフォトアルバムを考えていた当初からやってみたかったので、とりあえず作ってみましたがどうでしょうか。</p>
+<p>ちなみに写真と位置情報については、以前増井”富豪家”俊之さんとお話してたときに（Wikiばなですな）、「位置情報と時間の関連データが取れてれば後からどうにでもなるんだから位置情報をいちいち写真に添付するのはナンセンスだ」という話をしてて、もっともだなーと思っていたので、そういうものをつくってみたいなと前から思ってたんでした。</p>
+<p>■［追記］</p>
+<ul>
+<li>バグを修正したpiccy002をリリースしました。</li>
+<li><a href="http://processing.dotimpac.to/?PiccySupport">piccyサポートwikiページを用意しました</a></li>
+</ul>
+<h1>Piccyとは</h1>
+<p>■Ajaxを採用したオンラインフォトアルバムです。 気軽に管理できてストレスなく閲覧できる画像ビュアーを目指して開発しています。</p>
+<p>詳しくは以下の解説ページもごらんください。</p>
+<ul>
+<li><a href="http://collisions.dotimpac.to/works/web/piccy.html">http://collisions.dotimpac.to/works/web/piccy.html</a></li>
+</ul>
+<h1>ダウンロード</h1>
+<ul>
+<li><a href="http://piccy.dotimpac.to/release/piccy002_20051118.zip">http://piccy.dotimpac.to/release/piccy002_20051118.zip</a></li>
+</ul>
+<h1>設置方法</h1>
+<ul>
+<li>圧縮ファイルを展開する。</li>
+<li>info.txt のadminpassを必ず変更する。</li>
+<li>info.txt の site_name や url などを編集する。</li>
+<li>index.rb 先頭行のRubyのPATHをサーバーに合わせる。</li>
+<li>サーバに転送する。</li>
+<li>dot_htaccessは「.httaccess」に名前を変える。</li>
+<li>index.rb に実行属性を付加する。他の属性は良きに計らう。
+<ul>
+<li>data以下のディレクトリに書き込み属性が必要かもしれません。</li>
+</ul>
+</li>
+</ul>
+<h2>サムネイル作成機能を使う</h2>
+<p>ImageMagick/RMagickを使用することで、画像のサムネイルを作成することができます。 デフォルトでは機能はオフにされています。</p>
+<ul>
+<li>info.txtのmakethumnailをtrueにする。スペースで区切ってください。
+<blockquote>
+<p>makethumnail true</p>
+</blockquote>
+</li>
+<li>ImageMagickとRMagickをインストールしてください。<br>
+　必要ならば、thumnail.rbのrequireのパスを変更してください</li>
+</ul>
+<h2>位置情報記録機能を使う</h2>
+<p>auのGPS機能のある携帯電話からアクセスすることで、位置情報のあるタグを使用できます。 デフォルトでは機能はオフにされています。</p>
+<ul>
+<li>info.txtのlocationをtrueにする。スペースで区切ってください。
+<blockquote>
+<p>location true</p>
+</blockquote>
+</li>
+<li>ezwebからpiccyを置いたURLにアクセスしてください。
+<blockquote>
+<p>http://（自分のサイトURL）/index.rb?cmd=location</p>
+</blockquote>
+</li>
+<li>位置情報通知ページが出ますので、「位置情報を通知する」をクリックします。</li>
+<li>位置情報をが得られればフォームが出ますので、場所の名前を入力して送信してください。<br>
+　（場所の名前は入力しなくてもかまいません）</li>
+</ul>
+<p>※現仕様では位置情報通知は誰からでもできてしまいますので注意してください。</p>
+<h2>GoogleMaps機能を使う</h2>
+<p>GoogleMapsに位置情報タグをマッピングしてみることができます。</p>
+<ul>
+<li>GoogleMaps APIのキーを取得します。
+<ul>
+<li><a href="http://www.google.com/apis/maps/signup.html">http://www.google.com/apis/maps/signup.html</a></li>
+</ul>
+</li>
+<li>info.txtのgmapkeyをにAPIキーを入れる。スペースで区切ってください。
+<blockquote>
+<p>location ABQIAAAAgf6OSxrgd3QJC98-sUWrXBT6rMgtMUOAl…</p>
+</blockquote>
+</li>
+</ul>
+<h1>謝辞、同梱ライブラリについて</h1>
+<p>以下のライブラリ、モジュールを使用しています。関係者の開発と提供に感謝します。</p>
+<ul>
+<li>ruby-jsonをアーカイブに同梱し、使用しています。
+<ul>
+<li><a href="http://sourceforge.net/projects/json">http://sourceforge.net/projects/json</a></li>
+</ul>
+</li>
+<li>imagesize.rbをアーカイブに同梱し、使用しています。
+<ul>
+<li><a href="http://tociyuki.cool.ne.jp/clife/comp/rubyimagesize.html">http://tociyuki.cool.ne.jp/clife/comp/rubyimagesize.html</a></li>
+</ul>
+</li>
+<li>PhotoXPのexifパースモジュールexifcodec一式をアーカイブに同梱し、使用しています。
+<ul>
+<li><a href="http://www.daifukuya.com/photoxp/">http://www.daifukuya.com/photoxp/</a></li>
+</ul>
+</li>
+<li>javascriptライブラリscript.aculo.usをアーカイブに同梱し、使用しています。
+<ul>
+<li><a href="http://script.aculo.us/">http://script.aculo.us/</a></li>
+</ul>
+</li>
+<li>GoogleMaps用測地系変換ライブラリwgsgmap.15.jsをアーカイブに同梱し、使用しています。
+<ul>
+<li><a href="http://d.hatena.ne.jp/tociyuki/20050731/1122823117">http://d.hatena.ne.jp/tociyuki/20050731/1122823117</a></li>
+</ul>
+</li>
+</ul>
+<h1>動作について</h1>
+<ul>
+<li>動作についてはFirefox1.0.7、InternetExplorer6で行っています。</li>
+<li>Opera,Safariなどのブラウザでの動作検証は行っていません。問題がありましたらフィーとバックいただけると助かります。</li>
+<li>報告はこの記事のコメントなどにどうぞ。</li>
+</ul>
+<h1>ライセンス</h1>
+<ul>
+<li>piccy は、<a href="http://www.gnu.org/philosophy/free-sw.ja.html">フリーソフトウェア</a>です。</li>
+<li>完全に無保証です。</li>
+</ul>
+
+    <footer>
+    <p>
+        The code is maintained by <a href="https://twitter.com/philhawksworth">Phil Hawksworth</a> for his own reference and as a quick start for some of his projetcs, but take it if it is useful to you too. Find the repo on <a href="">Github</a>.
+    </p>
+    <p>
+        This page was generated on Invalid DateTime
+    </p>
+</footer>
+
+</div>
+</body>
+</html>
+
+
+

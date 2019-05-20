@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piccy : Ajax photo album</title>
+</head>
+<body class="" >
+<div class="container">
+    <header>
+        <ul class="nav">
+            <li>
+                <a href="/">home<small>where the heart is</small></a>
+            </li>
+            <li>
+                <a href="/about">about<small>all about this</small></a>
+            </li>
+        </ul>
+        <h1>Piccy : Ajax photo album</h1>
+    </header>
+    <img class="img_R" src='/hexo/images/wp-content/uploads/2008/02/piccy.png' alt='piccy.png' />
+<p>■ブラウザ上で気持ちよく使えることを目指した写真ビュアーを作ってみました。かなりのピュアAjax アプリケーションでもあります。</p>
+<ul>
+<li>
+<p>おもな機能</p>
+<ul>
+<li>JavaScriptによる画面更新なしの写真閲覧</li>
+<li>スライドバーで画像サイズの動的変更</li>
+<li>画像のドラッグ＆ドロップによるタグ管理</li>
+<li>写真タイトルなどのテキストをその場で編集（in-place-edit)</li>
+</ul>
+</li>
+<li>
+<p>こちらでお試しください（アクセス集中すると重いかも…）</p>
+<ul>
+<li><a href="http://piccy.dotimpac.to/">http://piccy.dotimpac.to/</a></li>
+</ul>
+</li>
+</ul>
+<p>■[追記]　公開後の問題を修正し機能を追加したver.001をリリースしました。 – <a href="http://collisions.dotimpac.to/works/web/piccy001.html">http://collisions.dotimpac.to/works/web/piccy001.html</a></p>
+<h1>これはなにか</h1>
+<p>■ブラウザで使用するweb上のフォトアルバムソフトです。管理が簡単でストレスなく見られる、というものを目指しています。</p>
+<p>以前、旅行写真を公開するような機会があって、管理がらくちんでかっこよく見られるアルバムソフトというのを探していたんですが、探しかたが悪いのかうまく見つけられませんでした。そのときは結局<a href="http://spgm.sourceforge.net/">SPGM</a>を使ってみて、フォルダに画像をコピーするだけでアルバムを表示してくれるのは楽でよかったんですが、画面遷移がかったるかったり、プラグインを入れないといけなかったり細かい情報をテキストで書いてディレクトリに置かなければならなかったりとなかなかうざったい思いをしました。</p>
+<p>いっぽう、ストレスなくきれいに見せるという意味では、たとえば<a href="http://namazu.org/~satoru/zphoto/">zphoto</a>のようなコンパイルしてflashファイルにするようなものもいいんですが、写真を増やしたり差し替えたりといった場合の手間があるのでちょっとなー…と。</p>
+<p>で、その中間というと、やはりAjaxなのではないかと。ちょうど<a href="http://www.tiddlywiki.com/">TiddlyWiki</a>や<a href="http://lesserwiki.org/">LesserWiki</a>のUIをほかのものに使えないかなと考えていたところだったので、思い立って作りました。</p>
+<h1>機能の詳細</h1>
+<p>■基本的にはデモサイトで触ってもらえばわかるかと思います。</p>
+<ul>
+<li><a href="http://piccy.dotimpac.to/">http://piccy.dotimpac.to/</a></li>
+</ul>
+<h2>フォルダウインドウのオープン／クローズ</h2>
+<p>TiddlyWikiスタイルと思ってもらっていいです。フォルダを開くと中にある写真画像が一覧できるウインドウが開き、写真をクリックするとそのウインドウの下に大きな画像を見るウインドウが開きます。それぞれのウインドウは個別に開閉できます。</p>
+<h2>ズームスライドバー</h2>
+<p>写真ウインドウにはそれぞれスライドバーがついていて、表示画像の大きさを変えることができます。</p>
+<h2>フォルダ／写真タイトルのin-place-edit</h2>
+<p>フォルダと写真のタイトルは編集することができます。タイトルの文字をクリックすると編集フォームに切り替わり、その場で編集できます。</p>
+<h2>ドラッグ＆ドロップによるタグ編集機能</h2>
+<p>いわゆるタグというか、いくつかのフォルダから写真を選んで別のアルバムをつくることができます。</p>
+<p>タグの編集は写真をドラッグ＆ドロップすることで行えます。タグのウインドウに写真をドロップすると、非同期リクエストを行い情報を自動的に保存します。</p>
+<h1>script.aculo.usを使ってみた</h1>
+<p>■ご覧のとおり、JavaScriptをふんだんに使用していてスゲー感じになってますが、見栄えの部分では<a href="http://script.aculo.us/">script.aculo.us</a>というJavaScriptユーティリティライブラリを全面的に利用しています。使いかたについてはLesserWikiをものすごく参考にしました。</p>
+<p>具体的にどのあたりを使っているかというと、</p>
+<ul>
+<li><a href="http://wiki.script.aculo.us/scriptaculous/show/Effect.Appear">Effect.Appear</a>
+<ul>
+<li>ウインドウや写真がフェードインしてくるところに使用してます。これがあると見栄えがだいぶ違いますよね。</li>
+</ul>
+</li>
+<li><a href="http://wiki.script.aculo.us/scriptaculous/show/Effect.Highlight">Effect.HighLight</a>
+<ul>
+<li>mouseoverでのハイライティングに。</li>
+</ul>
+</li>
+<li><a href="http://wiki.script.aculo.us/scriptaculous/show/Draggable">Draggable</a>
+<ul>
+<li>写真をドラッグさせるために使っています（スライドバーも）。やったことある人はご存知の通り、JavaScriptでのマウスポインタ位置とレイヤーの相対位置を調停するのは死ぬほど面倒なんですが、
+<blockquote>
+<p>new Draggable(‘id<em>of</em>element’,[options]);<br>
+とかエレメントを指定してやるとそれだけでドラッグできるようになるという。とはいえ、ワナがいろいろあって面倒なことをしてますが…。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><a href="http://wiki.script.aculo.us/scriptaculous/show/Droppables.add">Droppables.add</a>
+<ul>
+<li>こっちはタグウインドウのドロップイベントリスナ。ライブラリがなければ絶対にやろうと思わなかっただろう処理です。</li>
+</ul>
+</li>
+<li><a href="http://wiki.script.aculo.us/scriptaculous/show/Ajax.InPlaceEditor">Ajax.inPlaceEditor</a>
+<ul>
+<li>タイトル編集のその場で編集モードを自動設定してくれます。すげえ便利。</li>
+</ul>
+</li>
+</ul>
+<p>といったところです。ただデメリットとして、script.aculo.usフルセットとprototype.js（必須）でファイルサイズが130KBくらいなので、ページのロードがちょっと遅くなるかなと。</p>
+<p>それとあと、データ関係は全面的にJSONを採用してみました。なるほど便利かもと思いました。</p>
+<h1>今後</h1>
+<p>■まだつくりたてほやほやでひどいものなので、もうちょっとなんとかしてからサポートしたいと思います。</p>
+<ul>
+<li>IEだとときどき表示がくずれます。謎です。</li>
+<li>IEだとドラッグ座標がずれます。これも謎です。</li>
+<li>ユーザ管理をして、タグ編集はログインしないとできないようにします。</li>
+</ul>
+<p>使えるかどうかわからないですが、いちおう現状のアーカイブも置いておきます。ドキュメントはありません。ご参考に。</p>
+<ul>
+<li><a href="http://piccy.dotimpac.to/release/piccy_20050926.zip">http://piccy.dotimpac.to/release/piccy_20050926.zip</a></li>
+</ul>
+
+    <footer>
+    <p>
+        The code is maintained by <a href="https://twitter.com/philhawksworth">Phil Hawksworth</a> for his own reference and as a quick start for some of his projetcs, but take it if it is useful to you too. Find the repo on <a href="">Github</a>.
+    </p>
+    <p>
+        This page was generated on Invalid DateTime
+    </p>
+</footer>
+
+</div>
+</body>
+</html>
+
+
+

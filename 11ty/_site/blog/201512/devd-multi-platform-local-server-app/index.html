@@ -1,0 +1,8 @@
+<p><a href="https://github.com/cortesi/devd">cortesi/devd</a></p>
+<p>最終的にサーバで動作するjsアプリをローカルで開発/テストしてもらおうとすると、ローカルファイルとして開くと他のローカルコンテンツをajaxで取得するのに制約があるのでちょっと策を講じる必要がある。開発者なら<a href="http://pow.cx/">pow</a>を使うなり好きな方法でローカルサーバごしにアクセスしてもらうようにすればいいけど、非開発者でwindowsユーザのことも考えるといろいろインストールさせる説明をするのが憂鬱だし<a href="http://qiita.com/growsic/items/a919a7e2a665557d9cf4">Chromeをオプション付きで起動</a>というのも大げさな感じ。マルチプラットフォームで実行ファイルから簡単に立ち上げられるローカルサーバないのかなと探していてdevdというgo製のシンプルなwebサーバを見つけた。これでいけそう。</p>
+<p>アプリのデータを置いたディレクトリにdevdもいれておいて、windowsなら</p>
+<script src="https://gist.github.com/dotimpact/ab383d46289a6ca03e4f.js"></script>
+<p>みたいなバッチファイルを開いてもらえば<code>devd.io:8000</code>でローカルサーバごしにjsアプリを触れる。</p>
+<p>OSXはこう。</p>
+<script src="https://gist.github.com/dotimpact/1e14f29e3023c4d67b8e.js"></script>
+<p><code>-l</code>オプションもつけるとファイル更新時にリロードしてくれるんだけど、これはまだ不安定なのか環境によってはクラッシュするみたいだったので今は外してある。</p>

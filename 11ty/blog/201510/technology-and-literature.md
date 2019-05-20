@@ -1,0 +1,21 @@
+---
+title: 「大森望×円城塔×東浩紀「テクノロジーと文学のゆくえ——小説をプログラミングする」＠ゲンロンカフェを観た
+date: 2015-10-27
+pid: 65e6fc9832336d0a37ac6396151d0542
+status: p
+tags:
+   - genron-cafe
+   - blog
+---
+
+[【生放送】大森望×円城塔×東浩紀「テクノロジーと文学のゆくえ——小説をプログラミングする」【大森望のSF喫茶 #18】 @nzm @enjoetoh @hazuma - 2015/10/24 19:00開始 - ニコニコ生放送][1]
+
+札幌のホテルでタイムシフトで観た。いちおうちょっと電子書籍の話があったりとか、日本語の表記ゆれの話があったりとか、札幌にいる文脈とちょっと連動してておもしろかった。トークとしてはそれほど盛り上がってた感じでもないけど。
+
+エピローグ／プロローグ買って読もうかな。
+
+<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/415209561X/dotimpact-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51TJjyK7n7L._SL160_.jpg" alt="エピローグ" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/415209561X/dotimpact-22/ref=nosim/" name="amazletlink" target="_blank">エピローグ</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 15.10.27</div></div><div class="amazlet-detail">円城 塔 <br />早川書房 <br />売り上げランキング: 8,663<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/415209561X/dotimpact-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4163903585/dotimpact-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://g-ecx.images-amazon.com/images/G/09/nav2/dp/no-image-no-ciu.gif" alt="プロローグ" style="border: none;width: 110px;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4163903585/dotimpact-22/ref=nosim/" name="amazletlink" target="_blank">プロローグ</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 15.10.27</div></div><div class="amazlet-detail">円城 塔 <br />文藝春秋 <br />売り上げランキング: 20,177<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4163903585/dotimpact-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+[1]:	http://live.nicovideo.jp/watch/lv237059673

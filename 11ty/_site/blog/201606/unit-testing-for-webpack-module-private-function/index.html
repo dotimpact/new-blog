@@ -1,0 +1,28 @@
+<p>レガシーなJavaScriptソースをWebpackでビルドできるようにモジュールに切り分けてテストを書くことをしている（わりとヒマなので）。</p>
+<p>jsモジュール内の機能をプライベート関数に分割して書く場合に、そのプライベート関数部分の単体テストを書きたい場合があると思うんだけど、それをどうやればいいのかわからなくていろいろ調べた。</p>
+<p><a href="http://stackoverflow.com/questions/14874208/how-to-access-and-test-an-internal-non-exports-function-in-a-node-js-module">unit testing - How to access and test an internal (non-exports) function in a node.js module? - Stack Overflow</a></p>
+<p>こういう話で、ここでは<a href="https://github.com/jhnns/rewire">rewire</a>を使えという事になってるんだけど、これはうまくいかなかった。<a href="https://github.com/jhnns/rewire-webpack">rewire-webpack</a>というのもあるんだけど、これもだめだった。</p>
+<p>でうまくいったのは、<a href="https://github.com/webpack/exports-loader">exports-loader</a>でプライベート関数を指定してエクスポートする方法で、</p>
+<code>
+<p>function privateFunc() {
+return &quot;private&quot;;
+}</p>
+<p>function exportFunc() {
+return &quot;export&quot;;
+}</p>
+<p>module.exports = exportFunc;</p>
+</code>
+<p>こういうモジュールのテストを</p>
+<code>
+<p>describe('test', function() {</p>
+<p>it('モジュールのテスト', function() {
+var exportFunc = require('export-module.js');
+expects(exportFunc()).toBe('export');
+});</p>
+<p>it('プライベート関数のテスト', function() {
+var privateFunc = require(&quot;exports?privateFunc!./export-module.js&quot;);</p>
+<p>expects(privateFunc).toBe('private');
+});
+});</p>
+</code>
+<p>こんな感じにしたらうまくいった。</p>

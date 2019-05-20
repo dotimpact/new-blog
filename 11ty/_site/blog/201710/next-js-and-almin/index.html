@@ -1,0 +1,42 @@
+<p>いまつくってる新しいアプリで、せっかくなので新しいフレームワーク使おうと<a href="https://github.com/almin/almin">Almin</a>と<a href="https://github.com/zeit/next.js/">Next.js</a>を使っている。</p>
+<p>最初のころNext.jsのクライアントレンダリングとサーバサイドレンダリングの違いの意味がよくわかってなくて、Alminとどう連携させればいいのか試行錯誤が続いたんだけど、ようやくこうすればいいというのがわかった。</p>
+<code>
+const dispatcher = new Dispatcher()
+const storeGroup = new StoreGroup({
+  DataState: new DataStore(dataRepository)
+})
+const appContext = new Context({
+  dispatcher,
+  store: storeGroup,
+  options: {
+    strict: true
+  }
+})
+<p>async function loadData(req) {
+return new Promise(resolve =&gt; {
+if(req) {
+// サーバサイドだったらdbから読む
+const data = db.data.find().toArray()
+resolve(data)
+} else {
+// クライアントサイドだったらapiから取得
+axios('/api/data.json')
+.then((response) =&gt; {
+resolve(response)
+})
+});
+}
+}</p>
+<p>export default class extends React.Component {</p>
+<p>static async getInitialProps ({req}) {
+const data = await loadData(req)
+return { data }
+}</p>
+<p>componentWillMount () {
+// Alminにデータを渡すのはgetInitialPropsではなくここで
+if (this.props.data) {
+appContext.useCase(LoadDataUseCase.create()).execute(this.props.data)
+}
+}
+}
+</code></p>

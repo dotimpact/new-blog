@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iview for Tombloo(+launch piclens)</title>
+</head>
+<body class="" >
+<div class="container">
+    <header>
+        <ul class="nav">
+            <li>
+                <a href="/">home<small>where the heart is</small></a>
+            </li>
+            <li>
+                <a href="/about">about<small>all about this</small></a>
+            </li>
+        </ul>
+        <h1>iview for Tombloo(+launch piclens)</h1>
+    </header>
+    <p>■最近はiview for Tombolooが気に入っていて、空気を読まないsiteinfoを勝手に追加しては鑑賞して悦にひたっております。</p>
+<p>えーと、「Tombloo」ってのはWebページとかWebページの一部（引用とか、画像とか、指定した領域とか）を右クリックのメニューからちょう楽にブックマークしたりいろんなサービスに投稿したりローカルに保存したりできる、<a href="http://d.hatena.ne.jp/brazil/">to</a>さんがつくってるちょう便利なFirefox機能拡張で、「iview for Tombloo」ってのは<a href="http://ido.nu/kuma/">ku</a>さんがつくってるTomblooをさらに拡張するスクリプトで、画像共有サイトやら写真ブログやらの画像だけを取ってきてさくさく見られる機能ね。取得先のサイトが（siteinfoっていうルールを書けば）誰でも登録して共有できるとこが素敵。しかしtoだのkuだのどうなんでしょうかこのひとたちの名前は。</p>
+<ul>
+<li>Tombloo
+<ul>
+<li><a href="http://github.com/to/tombloo/wikis/home">http://github.com/to/tombloo/wikis/home</a></li>
+</ul>
+</li>
+<li>iview for Tombloo
+<ul>
+<li><a href="http://ido.nu/kuma/2008/09/26/iview-for-tombloo/">http://ido.nu/kuma/2008/09/26/iview-for-tombloo/</a></li>
+</ul>
+</li>
+</ul>
+<p>でこの、iview for Tomblooで画像を見てて、もっと画像を巨大に見たいなーと思ったので、iviewから<a href="http://www.cooliris.com/">PicLens</a>（いまはCoolirisって言うらしいですが）を起動できるようにしてみました（実際はTomblooにあるPicLens起動のコードを持ってきただけなので何もしてないに等しいですが）。PicLensの説明はまあいいか。とりあえずこんな感じです。</p>
+<ul>
+<li>iview for Tombloo(+launch piclens)
+<ul>
+<li><a href="https://dl.getdropbox.com/u/103615/iview.js">https://dl.getdropbox.com/u/103615/iview.js</a></li>
+</ul>
+</li>
+</ul>
+<p>iview for TomblooでBig Pictureを見るとこんな感じだけど、</p>
+<img src="/hexo/images/wp-content/uploads/2008/10/img-0243.jpg" alt="IMG_0243.jpg" border="0" width="240" height="180" />
+<p>pキーを押すとPicLensが起動してこんな感じで見れる。</p>
+<img src="/hexo/images/wp-content/uploads/2008/10/img-0244.jpg" alt="IMG_0244.jpg" border="0" width="240" height="180" />
+<img src="/hexo/images/wp-content/uploads/2008/10/img-0245.jpg" alt="IMG_0245.jpg" border="0" width="240" height="180" />
+<p>もちろんiviewのsiteinfoがあるサイトならイワタブログでもあ？クリステルでもPicLensで見れます。PicLensはふつうmediaタグが埋め込まれた対応サイトでないと起動できないわけですけど、これでiview for Tomblooごしにどんなサイトでも（siteinfoを書けば）PicLensで鑑賞できるようになるのがうれしいとこです。</p>
+<p>なんでみなさんもiview siteinfo書くとよいですよ。</p>
+<hr>
+<p>ちなみに自分で書いたsiteinfo。</p>
+<ul>
+<li><a href="http://www.boston.com/bigpicture/">Big Picture</a>
+<ul>
+<li><a href="http://wedata.net/items/2658">http://wedata.net/items/2658</a></li>
+<li>もともとこのサイトの写真をフルスクリーンで見たいと思ってて、PipesでmediaRSSが作れないかとかいろいろ試していたところ、iview for Tomblooでいいじゃんという結論に達したのでした。ていうかBig Pictureいいよねー。</li>
+</ul>
+</li>
+<li><a href="http://star.ap.teacup.com/pettanesa/">一畳プラレール</a>
+<ul>
+<li><a href="http://wedata.net/items/2710">http://wedata.net/items/2710</a></li>
+</ul>
+</li>
+<li><a href="http://blogs.yahoo.co.jp/hiratamiyama/MYBLOG/yblog.html">なおとくんの自由研究</a>
+<ul>
+<li><a href="http://wedata.net/items/2720">http://wedata.net/items/2720</a></li>
+<li>このへんはRSSリーダで購読してるけどせっかくの大きな画像が見えないサイトシリーズ（「なおとくんの自由研究」はRSSリーダだとYahooブログのリファラ制限で巨大な閲覧不可画像が出る）。</li>
+</ul>
+</li>
+<li><a href="http://www.uva.co.uk/">United Visual Artists</a>
+<ul>
+<li><a href="http://wedata.net/items/2812">http://wedata.net/items/2812</a></li>
+<li>PicLensで見れるんならと書いてみたやつ。もとのサイトにすでにJavaScriptのスライドショーが組み込んであるので、スライドショーのページングボタンをparagraphにして、そのページ番号を使ってから直前のscriptタグで配列に入れてるurlを取ってくるという強引なことをしています。XPathの勉強になった。</li>
+</ul>
+</li>
+</ul>
+
+    <footer>
+    <p>
+        The code is maintained by <a href="https://twitter.com/philhawksworth">Phil Hawksworth</a> for his own reference and as a quick start for some of his projetcs, but take it if it is useful to you too. Find the repo on <a href="">Github</a>.
+    </p>
+    <p>
+        This page was generated on Invalid DateTime
+    </p>
+</footer>
+
+</div>
+</body>
+</html>
+
+
+

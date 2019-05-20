@@ -1,0 +1,15 @@
+<figure><img src="/images/201503/xcode-fatal-error.png " /></figure>
+<p>XCodeで新規プロジェクトをつくってとあるアプリのプロトタイプをつくっていたら、突然ビルド後に「Unable to run app in simulator」というエラーが出るようになって困った。</p>
+<p>試行錯誤してわかったのは、</p>
+<ul>
+<li>プロジェクトに「Resouces」というFolder referenceを作ると、以後アプリ起動できなくなる
+<ul>
+<li>エラーは「LaunchServiceErrorDomain, Code=0」だったり「NS POSIX ErrorDomain, Code=22」だったりいろいろっぽい</li>
+<li>Folder referenceじゃなくてGroupだったら問題ない</li>
+<li>「Resources」 iOS/OSXのアプリコンテナのディレクトリで使用される名前なのでそれと衝突する名前だとだめっぽい</li>
+</ul>
+</li>
+<li>一度上記の症状になると「Resouces」のreferenceを削除しただけではエラーは消えない</li>
+<li>~/Library/Developer/Xcode/DerivedData内の該当プロジェクトのビルドフォルダを削除してから再度ビルドすると治る</li>
+</ul>
+<p>ということらしかった。</p>

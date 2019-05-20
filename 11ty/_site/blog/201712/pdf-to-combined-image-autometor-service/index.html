@@ -1,0 +1,7 @@
+<p>scansnapでスキャンしたメモがまとまったpdfとか、pdf開かなくても全ページまとまった画像になってるといいなーと思ったのでつくった。</p>
+<figure><img src="https://i.gyazo.com/48d3d5c3fefd2ae899d646d38dcbdeb0.png 600 " /></figure>
+<p>imagemagickと<a href="https://github.com/uiureo/gyazo-cli">uiureo/gyazo-cli</a>が必要。gyazoのcliはGO製の<a href="https://github.com/Tomohiro/gyazo-cli">Tomohiro/gyazo-cli</a>もあるみたいだけど前者は<code>--quiet</code>があったのでそっちで。</p>
+<p>montage(画像を連結するimagemagickのツールのひとつ)はノーオプションだとサムネイルサイズの画像を作ってしまうので、入力画像をそのまま連結する<code>-mode concatenate</code>にする（参考：<a href="https://superuser.com/questions/290656/combine-multiple-images-using-imagemagick">Combine multiple images using ImageMagick - Super User</a>）。</p>
+<p>こういうのができる。</p>
+<figure><img src="https://i.gyazo.com/e7e29300103a7e52041c0b3bc5f2e651.png 600 " /></figure>
+<p>論文とか自炊した本とかページ数が多いpdfだとgyazoに画像がでかすぎると怒られるので、最初の数ページだけにするとか、ほかにも工夫のしがいがありそう。</p>

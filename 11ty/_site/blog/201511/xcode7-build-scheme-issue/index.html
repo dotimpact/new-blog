@@ -1,0 +1,12 @@
+<p>アプリ申請を控えているのでアップデートしないつもりがうっかりしてXCode7を入れてしまい、仕方がなく7での開発をしているときにぶち当たった問題。</p>
+<p>Adhocビルドをアーカイブして配信しようとすると、</p>
+<p>warning: (armv7) /Users/.../BuildProductsPath/Adhoc-iphoneos/libPods-JockeyJS.a(Jockey.o) unable to open object file: No such file or directory</p>
+<p>みたいな感じのwarningが大量に出て、どうやらCocoapods含め使っているライブラリ全部で出てる様子。ビルド設定をあれこれ変えても変わらず、同様の設定でwarningが出ないビルドターゲットやプロジェクトとの差もよくわからないという中で見つけた情報がこれ。</p>
+<p><a href="https://github.com/CocoaPods/CocoaPods/issues/4237">hundreds of warnings during Archive in Xcode 7 · Issue #4237 · CocoaPods/CocoaPods</a></p>
+<blockquote>
+<p>we had build schemes named things like
+App Name (Debug)
+App Name (App Store)
+And we were getting the errors as well, removing the parenthesis fixed it for us as well.</p>
+</blockquote>
+<p>僕のプロジェクトではschemeの名前を「anyApp(dev)」みたいにしてたののビルドで問題がおきてたのでカッコを取り除いたらwarningが出なくなった。</p>

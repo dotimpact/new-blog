@@ -1,0 +1,20 @@
+<p>AspectMockでモッキングするクラス（に依存するクラス）でyieldを使ってると、AspectMockが注入するコードがreturnで値を返そうとするためエラーになる。</p>
+<pre><code>PHP Fatal error:  Generators cannot return values using &quot;return&quot; in /...
+</code></pre>
+<p>とりあえずキャッシュコードのreturnをyieldに変えて動かしてたけど、もうissueになっててdev-masterでは解消されているっぽい。</p>
+<p><a href="https://github.com/Codeception/AspectMock/issues/50%0A">Generators result in fatal error · Issue #50 · Codeception/AspectMock</a></p>
+<p>Composerでdev-masterのモジュールをインストールする（&quot;minimum-stability&quot;: &quot;dev&quot;にしてもいいけどこれだと全モジュールのdev-masterが入る）</p>
+<pre><code>&quot;require-dev&quot;: {
+   ...
+   &quot;codeception/aspect-mock&quot;: &quot;dev-master&quot;
+   ...
+}
+</code></pre>
+<p>上記修正は返り値のキーワードをPHPDOCの@returnで判別するものなので、AspectMockのキャッシュを消して、yieldを使ってるメソッドのPHPDOCの@returnに <code>\Generator</code> を書く（<code>Generator</code>だけだとだめだった）</p>
+<pre><code>/**
+ * @param $name
+ * @return \Generator
+ */
+public function generatorMethod($name)
+</code></pre>
+<p>これで動いた。AspectMock黒魔術感あってハマると苦しい…。</p>

@@ -1,0 +1,14 @@
+<p>なぜかいつのまにかHexoが動かなくなっていたので勢いで3.0.0-rc.4にしてみたら、けっこう各部が動かなくて困った。</p>
+<p>archive画面でget_postsで記事をリスティングしてたのが動かなくなってて（v3ではヘルパーのget_postsが廃止されたそうだ）、しかもその代替コードがいまいちよくわからなったのだが、</p>
+<code>
+   \<% site.tags.find({name: 'work'}).data[0].posts.sort('date', -1).forEach(function(item){ %\>
+	  <li><a href="<%- config.root %><%- item.path %>"><%= item.title %></a></li>
+   \<% }); %\>
+</code>
+<p>にしたらひとまず動いた（postsを取るもっといいインターフェイスがないとおかしい気がするのだが）。</p>
+<p>あとhexo-generator-feedがnpmにあるのだとv3に対応してないので、</p>
+<code>
+npm install git+https://git@github.com/hexojs/hexo-generator-feed.git --save
+</code>
+<p>とgitのを入れて間に合わせた。</p>
+<p>今日はとりあえずここまで。</p>

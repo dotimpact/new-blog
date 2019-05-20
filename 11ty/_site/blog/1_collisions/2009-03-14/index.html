@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube打楽器/VJソフト（？）「TubeObstruction」</title>
+</head>
+<body class="" >
+<div class="container">
+    <header>
+        <ul class="nav">
+            <li>
+                <a href="/">home<small>where the heart is</small></a>
+            </li>
+            <li>
+                <a href="/about">about<small>all about this</small></a>
+            </li>
+        </ul>
+        <h1>YouTube打楽器/VJソフト（？）「TubeObstruction」</h1>
+    </header>
+    <p><img class="img_R" src="/images/wp-content/uploads/2009/03/tubeobstruction.png" alt="TubeObstruction.png" border="0" width="250" height="234" /> ■さくじつ<a href="http://b-o-w.jp/events/dtlive/">DeskTopLive.as</a>にご来場（もしくはustreamで試聴）くださったみなさまありがとうございました、そしてお疲れさまでした。</p>
+<p>ものすごい盛況でイベント自体もすごい面白かったですね。人のプログラミングの様子を見る45分ってどんな時間になるのかなーと若干不安に感じていたんですが、始まってみると思った以上に興味深くてあっという間だったです。プログラムなんてさっぱり、という感じの友人（女子）も何人か来ていたんですけども、そういう人から見ても噂には聞いていたプログラムなるものが実際に目の前でかなりのスピードで打ち込まれていくのは新鮮な体験だったみたいでした。あとASゴングのみなさま（とくに小坂さんのDirector使いっぷり＆饒舌っぷり！）も4nchor5 la6のトークもすごすぎでした。</p>
+<p>いっぽう自分のデモはなんとも残念な感じで公開しきりでしたが…　ともかくこのイベントにむけて作ってみたものをこちらでも公開しておきます。YouTubeのストリーミング動画を物理シミュレーションで落下させて映像と音声をミックスするというコンセプトのコンテンツ「TubeObstruction」です。</p>
+<ul>
+<li><a href="http://work.doppac.cc/as3/TubeObstruction/index.html">http://work.doppac.cc/as3/TubeObstruction/index.html</a>
+<ul>
+<li>FireFox, Safariにて動作確認してます</li>
+<li>※FireFoxだと動かないこともあるみたいで、確認中です</li>
+</ul>
+</li>
+</ul>
+<p><a href="http://vimeo.com/3642481">TubeObstruction Demo</a> from <a href="http://vimeo.com/user1002495">dotimpact</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+<hr>
+<h2>これは</h2>
+<p>■Box2DFlashAS3の物理シミュレーションオブジェクトとしてYouTubeからダウンロードする動画を表示して、動画同士を衝突させて映像や音をミックスして遊ぶコンテンツです。動画のボールは壁や別のボールとの衝突による衝撃が起きた際だけ力の強さに応じて再生されます。</p>
+<h2>操作方法</h2>
+<ul>
+<li>入力フィールド（画面上段）
+<ul>
+<li>検索ワードを入力してリターンすると、YouTubeでの検索結果から動画をダウンロードして、円形のオブジェクトとして落下します。</li>
+<li>“＜検索ワード＞,3″のようにカンマ区切りで数字を指定すると、落ちる個数を指定できます</li>
+<li>検索ワードの代わりにYouTubeの動画パーマリンクを入力することで、特定の動画を指定できます</li>
+</ul>
+</li>
+<li>スライダーパネル
+<ul>
+<li>入力フィールドにマウスオーバーすることでスライダーパネルがスライドします</li>
+<li>スライダーはマウスを載せてマウスホイール（スクロール操作）をすることで値の増減を操作します</li>
+<li>TimeStep: 物理シミュレーションの時間単位を変えます。増やすことで時間単位が細かく（＝動きがスローに）なります</li>
+<li>Gravity: 重力の値を変えます。増やすことで重力が強くなります</li>
+<li>Density: オブジェクトの密度の値を変えます。増やすことで重量が増し、慣性が強くなるため衝突の衝撃が強くなります</li>
+<li>Restitution: 衝突時の力の減衰を変えます。最大だと完全反射ですが減らすと衝突するたびに力が弱くなります</li>
+<li>Friction: 摩擦力を変えます。増やすと衝突時に回転がつきやすいです</li>
+<li>Impulse_Decay: 衝突時の動画再生の減衰を変えます。増やすと減衰が緩くなるので、再生される時間が長くなります</li>
+<li>Play_Vibrate: 衝突時の動画再生を一定期間ごとに止めて擬似的なスローモーションをかけます。数値を小さくすると一時停止の間隔が速くなり、スローになります</li>
+<li>Volume_Fade: 衝突時の動画再生のボリュームの減衰を変えます。減らすと速くフェードアウトします</li>
+</ul>
+</li>
+<li>動画ボールオブジェクト
+<ul>
+<li>衝突時の衝撃の強さにより、動画が再生されます</li>
+<li>ボールをドラッグして好きな場所に移動できます</li>
+<li>マウスがボールの上にある時（ドラッグ中）にマウスホイール（スクロール操作）をすることでボールの大きさが変わります</li>
+<li>ボールが大きいとボリュームが大きくなります</li>
+<li>動画の再生が進むと徐々にボールが大きくなり、再生が終了するとボールは消えます</li>
+<li>※動画ストリームの問題により、再生されないまま消滅する場合もあります</li>
+</ul>
+</li>
+<li>ウインドウ
+<ul>
+<li>ウインドウのサイズを変えることで、オブジェクトが飛び回るフィールドを広げることができます</li>
+<li>ウインドウを画面内でドラッグして移動させると、ドラッグ距離に応じてすべてのボールに力を与える（画面を揺らす）ことができます</li>
+<li>フィールドは上部の見えないところで上端が切れているので、ボールを上に大きく飛ばすと戻ってこないことがあります。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>ボールが増えれば増えるほど音像としては混沌になってしまうので、多少練習してデモではもうちょっとうまく「演奏」できるかなと思っていたんですが、前のデモの流れから説明中心のデモにしてしまったんでいまいちだったかなと。みなさまにも触ってみていただけるとうれしいです。</p>
+
+    <footer>
+    <p>
+        The code is maintained by <a href="https://twitter.com/philhawksworth">Phil Hawksworth</a> for his own reference and as a quick start for some of his projetcs, but take it if it is useful to you too. Find the repo on <a href="">Github</a>.
+    </p>
+    <p>
+        This page was generated on Invalid DateTime
+    </p>
+</footer>
+
+</div>
+</body>
+</html>
+
+
+

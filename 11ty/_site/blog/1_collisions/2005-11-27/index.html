@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>よく考えたらわりと遍在するJavaScript</title>
+</head>
+<body class="" >
+<div class="container">
+    <header>
+        <ul class="nav">
+            <li>
+                <a href="/">home<small>where the heart is</small></a>
+            </li>
+            <li>
+                <a href="/about">about<small>all about this</small></a>
+            </li>
+        </ul>
+        <h1>よく考えたらわりと遍在するJavaScript</h1>
+    </header>
+    <p>■なんとなく僕も<a href="http://la.ma.la/blog/diary_200511260950.htm">入門Ajax便乗企画</a>。 いちおう貼っときます。まだ買えてないんですが。</p>
+<ul>
+<li><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4797332646/ref=nosim/dotimpact-22/">入門 Ajax</a>
+<ul>
+<li>高橋 登史朗 (著)</li>
+</ul>
+</li>
+</ul>
+<p>■このあいだと旧友との飲み会で「JavaScriptが〜」というような話をdしてたら友人のacicくん（えーと、仕事ではサーバサイドJavaとかやってるひと）に「JavaScriptなんか使うほうが間違ってるっていう認識だけど」と返されて、うーん、まだそうなのかも。まだ<a href="http://d.hatena.ne.jp/brazil/20050829/1125321936">汚名は返上</a>されてないかも。と思ったところ。</p>
+<p>ところでわれをひるがえってみるに、なんで今のAjax環境にわりとすんなり適応できてるかというと、よく考えてみると過去3年くらいでJavaScriptでいろんなものを作ってみていて、しかもいろんな（いわば）変態環境をとっかえひっかえするのに慣れていたので、「JavaScript（/JScript/ActionScript/などのECMAスクリプト系）はなんでもあり」というイメージがあったからではないかと思った。</p>
+<p>なので、JavaScriptでなにができるか／なにを作ったかを、ここらで棚おろししてみます。</p>
+<h1>JavaScript+DHTML（Ajax)</h1>
+<p>■そもそもどのへんでJavaScriptをどっぷり使いはじめたかというと、じつはprocessingを使う前にJavaScript+DHTMLでプログラミングの授業をやってみた年があって（HTMLはある程度理解できるから、そのステップアップとしてなじみやすいんでは？　という意図でした。結果的には挫折の道でしたが…）、そのへんじゃないかな。つまり3年前ですね。Ajaxより３年早かった！　といえよう。早すぎた。当時はまだMacOS9の環境だったので悪名高いMacIEでいろいろしなきゃいけなくて、大変でした。</p>
+<p>あとこの授業で使う画像素材をPhotoShopで加工するときに、アクションで無理なとこをJavaScriptでできるなーとかillustratorでも使えるんだーとか、そんなこともしてました。</p>
+<h2>BulletSurf/StickyWeb</h2>
+<ul>
+<li><a href="http://collisions.dotimpac.to/works/web/bulletSurf.html">http://collisions.dotimpac.to/works/web/bulletSurf.html</a></li>
+<li><a href="http://collisions.dotimpac.to/works/web/stickyWeb.html">http://collisions.dotimpac.to/works/web/stickyWeb.html</a></li>
+</ul>
+<p>■で、その授業のあとの夏休みで勢いでgenekistiScope（後述）のスクリプトを作って、そのあと作ったのがBulletSurf/StickyWebかな。「弾幕を避けながらアイテムをとりにいく感覚でポインタの動きを妨害するブラウザがあるといいんじゃないかなー」みたいなぼんやりしたアイデアをまんま作ってみた。内容的には<a href="http://www.asahi-net.or.jp/~cs8k-cyu/">ABA</a>さんの<a href="http://www.asahi-net.or.jp/~cs8k-cyu/bulletml/index.html">BulletMLアプレット</a>ソース（.java）からのポーティングですな。あほなことしたもんだ。ちなみに当時よくわかってなくてBulletMLのxmlパースを自前（というか<a href="http://www2.airnet.ne.jp/sardine/docs/fesija/docja/html/xparse.txt">xparseっていうライブラリ</a>）でやってたんだけど、いま考えるとMSXMLとかでふつうにDOMを操作すりゃよかったのかな。</p>
+<p>当時得た教訓としては</p>
+<ul>
+<li>イベントの互換性が超めんどい</li>
+<li>DHTMLの座標操作が超めんどい</li>
+<li>ブラウザによって動作速度が天と地ほど違う</li>
+<li>でも実は、かなりなんでもできるかも</li>
+</ul>
+<p>といったところだった（なので最近のJavaScriptライブラリは泣くほど便利でうれしいので、積極的に使っている。もう戻れない）。</p>
+<p>当時はこの辺を参考にしていた。</p>
+<ul>
+<li><a href="http://d.hatena.ne.jp/dotimpact/20040229#p1">http://d.hatena.ne.jp/dotimpact/20040229#p1</a>
+<ul>
+<li><a href="http://www.smokymonkeys.com/triglav/index.html">http://www.smokymonkeys.com/triglav/index.html</a></li>
+<li><a href="http://www.ne.jp/asahi/family/wakaba/inu3/zemi/index.html">http://www.ne.jp/asahi/family/wakaba/inu3/zemi/index.html</a></li>
+<li><a href="http://member.nifty.ne.jp/aya/js4/index.htm">http://member.nifty.ne.jp/aya/js4/index.htm</a></li>
+<li><a href="http://www.openspc2.org/reibun/Illustrator10/">http://www.openspc2.org/reibun/Illustrator10/</a></li>
+<li><a href="http://www.onicos.com/staff/iz/amuse/javascript/expert/">http://www.onicos.com/staff/iz/amuse/javascript/expert/</a></li>
+<li><a href="http://www.interq.or.jp/student/exeal/dss/ejs/">http://www.interq.or.jp/student/exeal/dss/ejs/</a></li>
+<li><a href="http://member.nifty.ne.jp/masarl/article/js-oop.html">http://member.nifty.ne.jp/masarl/article/js-oop.html</a></li>
+<li><a href="http://web.archive.org/web/*/http://www.skipup.com/~peace/javascript/">http://web.archive.org/web/*/http://www.skipup.com/~peace/javascript/</a></li>
+</ul>
+</li>
+</ul>
+<h2>kaiwarecotonoha / Calki ver.002 / Piccy</h2>
+<ul>
+<li><a href="http://collisions.dotimpac.to/works/web/kaiwarecotonoha.html">http://collisions.dotimpac.to/works/web/kaiwarecotonoha.html</a></li>
+<li><a href="http://collisions.dotimpac.to/works/web/calki002.html">http://collisions.dotimpac.to/works/web/calki002.html</a></li>
+<li><a href="http://collisions.dotimpac.to/works/web/piccy.html">http://collisions.dotimpac.to/works/web/piccy.html</a></li>
+</ul>
+<p>このへんは省略。</p>
+<h1>Photoshop / illustrator　スクリプト</h1>
+<p>■あんまりやってるひとを（webで）見かけませんが、PhotoshopやillustratorなどAdobeのソフトはJavaScriptで制御できます。APIちゃんとそろってるし、デバッガもあるし、わりと使いでがあります。</p>
+<h2>Photoshopスクリプト</h2>
+<p>たとえばゲームなんかで使うキャラクタの回転パターンをPhotoshopで作るとして、レイヤーをコピーして単位角度で回転…というアクションを作って何回も実行すると画像が劣化して大変なことになったりします。なのでこれをするためのMakeRotImageというスクリプトを作ったりしました。</p>
+<p>あとPhotoshopCS以前はレイヤーを別々にファイルに書き出すことができなかったんで、こういうふうに作った画像を保存するためのスクリプト（savaeEachLayers.js）なども作りました。それはまあいいか公開は。</p>
+<ul>
+<li><a href="http://processing.dotimpac.to/?sample%2FJavaScript%2FMakeRotImage.js">http://processing.dotimpac.to/?sample%2FJavaScript%2FMakeRotImage.js</a></li>
+<li>このへんを参照
+<ul>
+<li><a href="http://www.openspc2.org/reibun/PhotoshopCS/">Photoshop CS自動化作戦</a></li>
+<li><a href="http://sygnas.tv/diary/200305.htm#200305201330">RubuerFanのダダさんの日記</a></li>
+</ul>
+</li>
+</ul>
+<h2>illustratorスクリプト</h2>
+<p>illustratorスクリプトは、オープンキャンパスのワークショップで使った驚き盤のテンプレートを書くのを作ったりしましたな。illustratorのスクリプトは描画はほぼすべて制御できるのでかなり楽しいですよ。</p>
+<ul>
+<li><a href="http://processing.dotimpac.to/?sample%2FJavaScript%2Fodoroki.js">http://processing.dotimpac.to/?sample%2FJavaScript%2Fodoroki.js</a></li>
+<li><a href="http://processing.dotimpac.to/?sample%2FJavaScript%2Fodoroki2.js">http://processing.dotimpac.to/?sample%2FJavaScript%2Fodoroki2.js</a></li>
+<li><a href="http://processing.dotimpac.to/?sample%2FJavaScript%2Fodoroki3.js">http://processing.dotimpac.to/?sample%2FJavaScript%2Fodoroki3.js</a></li>
+<li>このへんを参照
+<ul>
+<li><a href="http://www.openspc2.org/book/IllustratorCS/">Illustrator CS自動化作戦</a></li>
+<li><a href="http://po6.nsk.ne.jp/~snget/ai/ai_index.htm">Adobe Illustrator Script情報</a></li>
+<li><a href="http://sygnas.tv/arc/ruputer/2005/03/illustrator10cs.html">Illustrator10＆CSで便利なスクリプト集</a></li>
+</ul>
+</li>
+</ul>
+<h2>GA的驚き盤作成スクリプト　GenekistiScope（aiスクリプト版）</h2>
+<ul>
+<li><a href="http://processing.dotimpac.to/?sample%2FJavaScript%2FaiGeneScope">http://processing.dotimpac.to/?sample%2FJavaScript%2FaiGeneScope</a>
+<ul>
+<li>たぶんこれ、CS以降のillustartorでは動かないです</li>
+</ul>
+</li>
+</ul>
+<p>■で、驚き盤を作ってるうちに、自分は絵がかけないからなんか自動生成できないかなーと思って「ランダムに初期生成した驚き盤のパターンを選択して、Genetic Algorithmで適応進化させるスクリプト」というアイデアを考えて、illustratorのスクリプトを作った。これが2003年の夏。</p>
+<p>レイヤーにパターンを複数生成して、illustratorのレイヤーの表示／非表示をスクリプトで判定して次世代パターンの適応に用いるという、なんというかillustratorのインターフェイスのハック的な利用がけっこう気に入ってました。おんなじように「export flash」という文字のレイヤーを表示してからスクリプトを起動すると、illustartorのSWFエクスポートを使って驚き盤がアニメーションするSWFが生成できたりもします。</p>
+<h1>Flash ActionScript</h1>
+<p>■で、順番的にいうと、JavaScriptをしこたま使ったあとにFlashのActionScriptを触りました。うわイベント設定とか座標指定が楽〜、でもタイムラインとシンボルがうぜー、あとスクリプトの動作遅くない？　みたいな。</p>
+<h2>GA的驚き盤作成ツール　GenekistiScope（flash版）</h2>
+<ul>
+<li><a href="http://collisions.dotimpac.to/works/flash/geneScope.html">http://collisions.dotimpac.to/works/flash/geneScope.html</a></li>
+</ul>
+<p>とりあえずillustratorのスクリプトなんかだれも使ってくれないので（プログラマーはillustrator持ってないし、デザイナーはスクリプトなんかに興味を持たないので）、flashに移植してみたのがこれ。かなりらくちんに移植できた覚えがあります。Flashがベジェ曲線を持ってなかったから自前で書いたりしたのがめんどかったくらいだったような。</p>
+<p>flashはほかにもいろいろつくってますが省略。</p>
+<ul>
+<li><a href="http://collisions.dotimpac.to/works/flash">http://collisions.dotimpac.to/works/flash</a></li>
+</ul>
+<h1>WindowsScriptingHost(WSH)</h1>
+<p>Windowsは組み込みのJScriptでファイル操作したりCOMを利用してアプリケーションを制御できたりして、これはこれで使いでがあります。こういうのもけっこうやってる。</p>
+<h2>iTunes COM Interface</h2>
+<p>iTunesのCOMインターフェイスは充実しててSDKも公開されてるので、この辺をさわり始めたんじゃなかったかな。ようするにデジオ関係と、recommuni関係。</p>
+<ul>
+<li><a href="http://dedio.dotimpac.to/wiki/?DedioTool%2FiTunes%CD%D1%A5%B9%A5%AF%A5%EA%A5%D7%A5%C8">DedioTool/iTunes用スクリプト</a></li>
+<li><a href="http://collisions.dotimpac.to/project/RecommuniHacks.html">http://collisions.dotimpac.to/project/RecommuniHacks.html</a>
+<ul>
+<li><a href="http://processing.dotimpac.to/?sample%2FJavaScript%2FRecommuniHacks_001">http://processing.dotimpac.to/?sample%2FJavaScript%2FRecommuniHacks_001</a></li>
+<li><a href="http://processing.dotimpac.to/?sample%2FJavaScript%2FRecommuniHacks_002">http://processing.dotimpac.to/?sample%2FJavaScript%2FRecommuniHacks_002</a></li>
+<li><a href="http://processing.dotimpac.to/?sample%2FJavaScript%2FRecommuniHacks_007">http://processing.dotimpac.to/?sample%2FJavaScript%2FRecommuniHacks_007</a></li>
+</ul>
+</li>
+<li>この辺を参照
+<ul>
+<li><a href="http://developer.apple.com/sdk/itunescomsdk.html">iTunes COM Interface SDK</a></li>
+</ul>
+</li>
+</ul>
+<h2>Amazonからアートワークを追加.js</h2>
+<ul>
+<li><a href="http://collisions.dotimpac.to/works/tool/AddArtworkfromAmazon.html">http://collisions.dotimpac.to/works/tool/AddArtworkfromAmazon.html</a></li>
+</ul>
+<p>調べたらADODB.Streamでwebでとってきたデータをローカルにファイル保存したりもできるってことで、アートワーク追加とかも作りました。</p>
+<p>自分で作ったのはこの辺かな。けっきょくJavaScriptの開発であんまりテキストは買ってなくて、基本的にはwebのリソースを参考にしながら書いたという感じですね。だからだめなんだけど。</p>
+<h1>まだやってないけど – GraceMonkey / XUL / Konfabulator(Dashboard,GoogleDesktop)</h1>
+<p>■このへんもさわってみたいなーと思ってるんですが、上を見てもらえばわかるとおり、「これは誰もやってないだろう、しかも誰もやらないだろう」というアイデアが思いつかないと動かないので、まあそういうのが思いつけばーという感じですな。そのうち。</p>
+<ul>
+<li><a href="http://firefox.geckodev.org/index.php?Greasemonkey">GraceMonkey</a></li>
+<li><a href="http://www.mozilla.org/projects/xul/">XUL</a></li>
+<li><a href="http://www.konfabulator.com/">Konfabulator</a>(<a href="http://www.apple.com/jp/macosx/features/dashboard/">Dashboard</a>,<a href="http://desktop.google.com/developer.html">GoogleDesktopプラグイン</a>)</li>
+</ul>
+<p>ほかにもあったら教えてくだされ。こう並べてみて思うのは、インターフェイスにちかいレイヤーを制御するのにJavaScriptは使われがちなんですな。</p>
+<h2>萌ディタ</h2>
+<ul>
+<li><a href="http://www.geocities.co.jp/SiliconValley-Oakland/3617/">http://www.geocities.co.jp/SiliconValley-Oakland/3617/</a></li>
+</ul>
+<p>■あとこれだな。JavaScriptで制御したりプラグインを作れるエディタ。こないだma.laさんが「最強。カーソル位置制御とかがバグっててエディタとしてはどうかと思うけど」っていってたよ。でもアルファギークがアルファなエディタを使わないでどうするという気もするので、むしろ使っていきたい！　僕はやだけど。</p>
+
+    <footer>
+    <p>
+        The code is maintained by <a href="https://twitter.com/philhawksworth">Phil Hawksworth</a> for his own reference and as a quick start for some of his projetcs, but take it if it is useful to you too. Find the repo on <a href="">Github</a>.
+    </p>
+    <p>
+        This page was generated on Invalid DateTime
+    </p>
+</footer>
+
+</div>
+</body>
+</html>
+
+
+

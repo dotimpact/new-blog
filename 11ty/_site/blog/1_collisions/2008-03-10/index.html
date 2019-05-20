@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ヤマログ2008</title>
+</head>
+<body class="" >
+<div class="container">
+    <header>
+        <ul class="nav">
+            <li>
+                <a href="/">home<small>where the heart is</small></a>
+            </li>
+            <li>
+                <a href="/about">about<small>all about this</small></a>
+            </li>
+        </ul>
+        <h1>ヤマログ2008</h1>
+    </header>
+    <p>子育てはとにかくゴミが増える</p>
+<hr>
+<p>■週末は来年度授業の打合せ会があったので杉並へ。とりあえず研究室用のGoogleSiteでも作っておくといいんじゃないなど。そろそろ授業の準備しないとないかんな。</p>
+<p>オーオカ先生と久しぶりにお会いしたので最近のお仕事など伺ってましたら、なんと今度出る大山<a href="http://homepage2.nifty.com/danti/">総裁</a>の団地写真集のデザインをされたとのこと。それは楽しみ。</p>
+<p><img class="img_R" src="http://ec2.images-amazon.com/images/I/51xaBm89hGL._AA240_.jpg" /> これかな。今月末あたりに出るみたい。</p>
+<ul>
+<li>大山 顕「<a href="http://www.amazon.co.jp/gp/product/4487802598?ie=UTF8&amp;tag=dotimpact-22&amp;link_code=as3&amp;camp=767&amp;creative=3999&amp;creativeASIN=4487802598">団地の見究</a>」</li>
+</ul>
+<p>あとガビンせんせいに<a href="http://jp.makezine.com/blog/">Make: Japan</a>がヤマログ2008になってるんじゃないか問題を聞いてみたら「そうなんだよねー」とのこと。「<a href="http://jp.makezine.com/blog/2008/03/core_memory.html">かっこいい機械ナイトvol.2</a>」（昼だけどナイト）行こうかなー。</p>
+<br class="clear" />
+<hr>
+<p>■もうながらくソーシャルブックマークはしてなくて、<a href="http://www.google.com/history/">GoogleWebHistory</a>と<a href="http://la.ma.la/blog/diary_200605070200.htm">ldr_gbsaver</a>でLDRのピンをGoogleBookmarkに送るので用をたしていたのですが、FireFox3を使うようにしてから両方できなったのでちょっと調べた。</p>
+<p>GoogleWebHistoryはアドオンのGoogleToolbarが使えなくなってるので記録されてないんですが、このヒストリーはPageRankの問い合わせのログが記録されてるのだそうで、<a href="https://addons.mozilla.org/ja/firefox/addon/2007">LivePageLank</a>を入れたら記録が再開されました。でもurlが記録されるだけでタイトルとか内容のダイジェストとかはインデックスされないっぽい。</p>
+<p>ldr_gbsaverについてはunsafeWindowでGM_xmlhttpRequestが使えなくなったせいだったのでwindow.settimeoutで対処。あとだいぶ前からGoogleBookmarkはsigていうパラメータも送らないとブックマークできなくなってるので（たぶん）、それもつけるようにしております（sigはGoogleBookmarksのページで調べる）</p>
+<pre><code>    this.save = function(url,title,label){
+        logger(&quot;sending private data to Google ... &quot;);
+        var postdata = form_encode({
+            sig: &quot;dGmsNr_6KtQap7IPvowLPw&quot;,
+            bkmk:   url,
+            title:  title,
+            labels: label
+        });
+        window.setTimeout(function() {
+           GM_xmlhttpRequest({
+                method: &quot;post&quot;,
+                url: &quot;http://www.google.com/bookmarks/mark&quot;,
+                data: postdata,
+                onload: function(){
+                   logger(&quot;sending private data to Google ... done&quot;);
+                }
+           })
+        }, 0);
+    }
+</code></pre>
+<p>ちなみにだれかと共有したいクリッピングについては<a href="http://dotimpact.tumblr.com/">Tumblr</a>でやっておりますよ。</p>
+
+    <footer>
+    <p>
+        The code is maintained by <a href="https://twitter.com/philhawksworth">Phil Hawksworth</a> for his own reference and as a quick start for some of his projetcs, but take it if it is useful to you too. Find the repo on <a href="">Github</a>.
+    </p>
+    <p>
+        This page was generated on Invalid DateTime
+    </p>
+</footer>
+
+</div>
+</body>
+</html>
+
+
+

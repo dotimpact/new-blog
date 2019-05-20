@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自分でいじくれる</title>
+</head>
+<body class="" >
+<div class="container">
+    <header>
+        <ul class="nav">
+            <li>
+                <a href="/">home<small>where the heart is</small></a>
+            </li>
+            <li>
+                <a href="/about">about<small>all about this</small></a>
+            </li>
+        </ul>
+        <h1>自分でいじくれる</h1>
+    </header>
+    <p>Processingがらみで２つ</p>
+<hr>
+<p>■<a href="http://www.atmarkit.co.jp/fwcr/design/">@IT デザインハック</a>にてProcessingの記事連載第２回が公開されております。</p>
+<ul>
+<li>Processingの対話式スケッチプログラミングで遊ぼう
+<ul>
+<li><a href="http://www.atmarkit.co.jp/fwcr/design/tool/processing02/01.html">http://www.atmarkit.co.jp/fwcr/design/tool/processing02/01.html</a></li>
+</ul>
+</li>
+</ul>
+<p>れいによってProcessingのはじめの一歩を解説してますが、今回はちょっと新機軸として<a href="http://ejohn.org/blog/processingjs/">Processing.js</a>でサンプルを用意しました。ここにも貼ってみよう。</p>
+<p>じつはProcessing.jsはこれまであんまり触ってきていなかったんですけども、実際にいろいろいじってみるに、このブラウザ上でJavaScriptで動いてることの軽快さは本家Processingとはぜんぜん違う感覚で楽しい。JavaScriptだからコアも気兼ねなく自分でいじくれるしね。</p>
+<p>ていうか記事のサンプルを動かすうえでいくつか困ったバグが見つかったので直しました。こんな感じ。</p>
+<ul>
+<li>HSBからRGBへの変換がまちがってた（えー！）ので直した</li>
+<li>ellipseが正円しか描けなくて楕円は描画されない状態だったので描画ルーチンを追加
+<ul>
+<li>楕円描画は<a href="http://d.hatena.ne.jp/chaperatta/20080722/1216736155">キャンバスで遊び中 – ベジェ曲線で楕円を描画する関数 – fujidigの雑記</a>のルーチンを使用させてもらってます</li>
+</ul>
+</li>
+<li>#aaaaaa形式の色指定が、colorModeで設定した各値のレンジの影響を受けてしまうのを回避</li>
+<li>IEでmouseX/Yが得られなかったのを直した</li>
+</ul>
+<p>せっかくなのでgithubでjeresig/rocessing.jsからフォークしてみています。</p>
+<ul>
+<li><a href="http://github.com/dotimpact/processing-js/tree/master">http://github.com/dotimpact/processing-js/tree/master</a></li>
+</ul>
+<hr>
+<p>■そしてProcessingといえば、Ben Fryの「Visualizing Data」の日本版、「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/false/dotimpact-22/ref=nosim">ビジュアライジング・データ ―Processingによる情報視覚化手法</a>」が１２月に発売になったそうでーす（オライリージャパンの編集さんに声をかけていただいて、ちょっとだけレビュー作業に関わらせていただきました）。</p>
+<p>もう原書を買っちゃったという人も多そうですけども、日本版は監訳の<a href="http://pitecan.com/">増井 俊之</a>氏による付録ページ「ActionScriptによる情報視覚化」もついててより素敵だったりしますよ。</p>
+
+    <footer>
+    <p>
+        The code is maintained by <a href="https://twitter.com/philhawksworth">Phil Hawksworth</a> for his own reference and as a quick start for some of his projetcs, but take it if it is useful to you too. Find the repo on <a href="">Github</a>.
+    </p>
+    <p>
+        This page was generated on Invalid DateTime
+    </p>
+</footer>
+
+</div>
+</body>
+</html>
+
+
+

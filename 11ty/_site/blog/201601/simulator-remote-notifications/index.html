@@ -1,0 +1,18 @@
+<p><a href="https://github.com/acoomans/SimulatorRemoteNotifications">acoomans/SimulatorRemoteNotifications - Objective-C</a></p>
+<p>これ使ってみた。iOSシミュレータでプッシュ通知をシミュレートして受信時のテストを行うライブラリ。cocoapodsで導入できる。</p>
+<p><code>didfinishLaunching</code>でライブラリを起動しておいて（デバッグターゲットのみで）、</p>
+<pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+	...
+
+	if DEBUG
+		[application listenForRemoteNotifications];
+	endif
+
+	return YES;
+}
+</code></pre>
+<p>ターミナルで9930ポートにデータを送ると</p>
+<pre><code>echo -n '{&quot;message&quot;:&quot;message&quot;}' | nc -4u -w1 localhost 9930
+</code></pre>
+<p>iOSシミュレータに起動中のアプリの<code>didReceiveRemoteNotification</code>が擬似的に呼ばれる仕組み。簡単に確認できてよかった。</p>

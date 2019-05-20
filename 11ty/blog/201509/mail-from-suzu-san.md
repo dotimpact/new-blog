@@ -1,0 +1,24 @@
+---
+title: すずさんからの葉書
+date: 2015-09-03
+pid: bbcfc314e3f26e9e7be451928a4789b6
+status: p
+tags:
+   - animation
+   - blog
+---
+
+[映画「この世界の片隅に」公式サイト][1]
+
+こうの史代原作の漫画『この世界の片隅に』の映画化プロジェクトというのが進んでおり、春にそれの[制作支援プロジェクト][2]（いわゆるクラウドファンディング）に参加した。支援の申し込みをしたときに特典としてすずさん（漫画の主人公）からの手紙が届きますというのがはいっていたのは認識していて、ただそれがどういったかたちで届くのかは想像していなかったというか、想像したとしてもまあ制作の進捗を伝えるファンクラブ報的なものが送ってくるのかなくらいのものだったと思う。しかし実際にはまったくこれ以上ないかたちで「すずさんの手紙」が届いた。
+
+{% image "/images/201509/postcard-from-suzu-san.jpg " %}
+
+実のところはすでにtwitterなどで先に届いた支援メンバーの人たちの話題を見ていたのでそれほど驚けなかったのが残念だったんだけど、その葉書には映画がどうとか漫画がどうとか支援メンバーがどうといったことは本当に一言も書いてなく、昭和十九年の葉書を模した体裁で、呉に嫁いだ北條すずさんが鉛筆で近況を自分に宛てて書き綴った葉書としてしかも実際に呉の消印（風景印）が押されて届いたものだった。きわめて親密な内容をつたえる葉書に見えるので家族に誤解されたという声がいくつもRTされていたけど、実際うちでも受け取っていた奥さんに「それ誰から？」と聞かれた。ややあせりつつこれはこれこれこういう映画の支援特典で…という話をしてみて、これは葉書というメディアの特性（と古式ゆかしさ）を活かして、支援者への特典でありながら支援者の周囲も巻き込むことも兼ねたキャンペーンにもなっているのかなと思った。偶然かもしれないけど、クラウドファンディングの支援者を通じてさらに支援者を増やす形としてもおもしろい試みになってるんじゃないかな。
+
+いくつもの通信手段のなかでも郵便はがきはとりわけそのメッセージが宛てられた個人以外の周囲に「漏れる」ことが容認されたメディアだという細馬宏通『絵はがきの時代』のイントロダクションを思い出した。それともちろん『親愛なる』も。『親愛なる』は当初葉書を模した本の表紙をそのまま宛名として（つまり本を葉書として）送るというプランで進んでいたのだけど、諸処の都合で断念してしまったのは今ならながらに残念だったな。葉書として送っていたら「漏れた」メッセージがまた別の物語を生んでいたのかもしれない。
+
+<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4791762746/dotimpact-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51DSXVXP62L._SL160_.jpg" alt="絵はがきの時代" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4791762746/dotimpact-22/ref=nosim/" name="amazletlink" target="_blank">絵はがきの時代</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 15.09.09</div></div><div class="amazlet-detail">細馬 宏通 <br />青土社 <br />売り上げランキング: 227,432<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4791762746/dotimpact-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+
+[1]:	http://www.konosekai.jp/
+[2]:	https://www.makuake.com/project/konosekai/
